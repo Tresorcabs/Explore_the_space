@@ -1,0 +1,242 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --black : black;
+    --background-color : #f0efef;
+    --header-background : #202124;
+    --header-text-color : rgb(240, 239, 239);
+}
+
+body{
+    background-color: var(--background-color);
+}
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    color: var(--header-text-color);
+    width: 80vw;
+    height: 25vh;
+    margin-left: 10vw;
+    background-color: var(--header-background);
+    clip-path: polygon(0 0, 100% 0, 89% 63%, 51% 69%, 11% 64%);
+    font-family: 'Dosis';
+    transition: all .3s;
+}
+
+/*GESTION DE LA NAVBAR ET DE SES COMPOSANTS*/
+.nav{
+    font-size: calc(0.5rem + 1.5vw);
+    transition: all .3s;
+}
+.logo h1{
+    font-family: 'Space Time';
+    font-size: 2.8rem;
+    margin-top: -2.6rem;
+}
+.nav-links{
+    display: flex;
+    gap: 3rem;
+    color: var(--header-text-color);
+    transition: all .3s;
+    margin-bottom: 2rem;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    text-decoration: none;
+    color: var(--header-text-color);
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: all .3s;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+.nav-links a:hover{
+    background-color: var(--header-text-color);
+    color: var(--header-background);
+    font-size: 1.35rem;
+}
+
+/*CONATINER DE LA SECTION HERO*/
+.hero-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+}
+
+/*TEXTE DE DESCRIPTION DE LA SECTION HERO*/
+.text-description{
+    padding: 5rem;
+    text-align: center;
+    transition: all .3s;
+}
+.hero-section .text-description h1{
+    font-size: 5rem;
+    font-family: 'Space time';
+    text-align: center;
+}
+.hero-section .text-description h2{
+    font-size: 2.5rem;
+    font-family: 'Dosis';
+    margin-top: 1rem;
+    text-align: center;
+    transition: all .3s;
+}
+.text-description a{
+    padding: 10px 50px;
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    border-radius: 40px;
+    text-decoration: none;
+    font-family: 'dosis';
+    font-weight: 600;
+    border-style: dotted;
+    transition: all .3s;
+}
+.text-description a:hover{
+    font-size: 1.2rem;
+}
+.text{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'dosis';
+    font-weight: 600;
+    line-height: 1.8rem;
+}
+
+/*IMAGE DE L'ASTRONAUTE*/
+.astronaut img{
+    margin-right: 10rem;
+    transition: all .3s;
+}
+
+footer{
+ background-color: var(--header-background);
+ height: 15vh;
+ margin-top: 5%;
+ display: flex;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ color: var(--header-text-color);
+}
+
+
+/*GESTION DU RESPONSIVE DESIGN*/
+
+@media all and (max-width: 1600px) {
+    header{
+        width: 100%;
+        height: 25vh;
+        clip-path: none;
+        margin: 0;
+    }
+    .logo h1{
+        margin: 0;
+    }
+    .hero-section{
+      transform: scale(0.9);
+    }
+}
+    
+
+@media (max-width: 1280px){
+    .hero-section{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .logo h1{
+        margin: 0;
+    }
+    .astronaut img{
+        margin-right: 0rem;
+        transform: scale(1.1);
+    
+    }
+}
+
+@media (max-width: 900px){
+    header{
+        width: 100vw;
+        height: 15vh;
+        margin: 0;
+        clip-path: none;
+        display: flex;
+        flex-direction: row;
+    }
+    .logo h1{
+        font-size: 2.4rem;
+        margin: 0 0 0 10px;
+    }
+#icons{
+    display: block;
+    margin-left: 10rem;
+    cursor: pointer;
+}
+#icons::before{
+    content: '\2630';
+}
+.active #icons::before{
+    content: "\2715";
+}
+.nav-links{
+    position: fixed;
+    margin-left: -100%;
+    margin-top: 5%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    background: var(--header-background);
+    width: 40%;
+    height: 35vh;
+    padding: 2rem;
+    text-align: center;
+    transition: all .3s;
+    border-radius: 10px;
+}
+
+.nav-links li a:hover{
+    padding: 5px 80px;
+}
+nav.active ul{
+    margin-left: -50%;
+    width: 100%;
+}
+}
+@media (max-width: 600px){
+    .nav-links li a:hover{
+        padding: 5px 50px;
+    }
+    nav.active ul{
+        margin-left: -50%;
+        width: 100%;
+    }
+}
+@media (max-width: 500px){
+    .nav-links li a:hover{
+        padding: 5px 60px;
+    }
+    nav.active ul{
+        margin-left: -50%;
+        width: 100%;
+    }
+    header{
+        width: 100%;
+    }
+}
